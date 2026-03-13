@@ -19,6 +19,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        $this->app['events']->listen(
+            SocialiteWasCalled::class,
+            SpotifyExtendSocialite::class . '@handle'
+        );
     }
 }

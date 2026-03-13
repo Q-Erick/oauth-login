@@ -15,12 +15,10 @@
         <!-- Password -->
         <div class="mt-4">
             <x-input-label for="password" :value="__('Password')" />
-
             <x-text-input id="password" class="block mt-1 w-full"
                             type="password"
                             name="password"
                             required autocomplete="current-password" />
-
             <x-input-error :messages="$errors->get('password')" class="mt-2" />
         </div>
 
@@ -44,4 +42,18 @@
             </x-primary-button>
         </div>
     </form>
+
+    <!-- 👇 AGREGA AQUÍ los botones de login social -->
+    <div class="mt-4">
+        <a href="{{ route('social.redirect', 'discord') }}"
+           class="w-full flex items-center justify-center px-4 py-2 mb-2 bg-indigo-600 text-white rounded hover:bg-indigo-700">
+            Iniciar sesión con Discord
+        </a>
+
+        <a href="{{ route('social.redirect', 'spotify') }}"
+           class="w-full flex items-center justify-center px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700">
+            Iniciar sesión con Spotify
+        </a>
+    </div>
+
 </x-guest-layout>

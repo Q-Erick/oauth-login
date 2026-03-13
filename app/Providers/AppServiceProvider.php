@@ -24,4 +24,9 @@ class AppServiceProvider extends ServiceProvider
             SpotifyExtendSocialite::class . '@handle'
         );
     }
+
+        $this->app['events']->listen(
+            SocialiteWasCalled::class,
+            DiscordExtendSocialite::class . '@handle'
+        );
 }
